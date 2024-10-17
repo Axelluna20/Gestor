@@ -1,0 +1,338 @@
+/* Establece el fondo, color y fuentes generales del cuerpo */
+body {
+	background: url(../images/bg-body.png) repeat; /* Fondo del cuerpo */
+	color: #d1d3d4; /* Color del texto */
+	font-family: Arial, Helvetica, sans-serif; /* Fuente general */
+	font-size: 14px; /* Tamaño de fuente */
+	margin: 0; /* Elimina márgenes */
+	min-width: 960px; /* Ancho mínimo */
+	padding: 0; /* Elimina relleno */
+}
+
+/* Carga la fuente "ultraregular" */
+@font-face {
+	font-family: 'ultraregular';
+	src: url('../fonts/ultra-webfont.eot'); /* Archivo .eot para IE */
+	src: url('../fonts/ultra-webfont.eot?#iefix') format('embedded-opentype'), /* Soporte para IE */
+	url('../fonts/ultra-webfont.woff') format('woff'), /* Archivo .woff */
+	url('../fonts/ultra-webfont.ttf') format('truetype'), /* Archivo .ttf */
+	url('../fonts/ultra-webfont.svg#ultraregular') format('svg'); /* Archivo .svg */
+	font-weight: normal; /* Peso normal */
+	font-style: normal; /* Estilo normal */
+}
+
+/* Carga la fuente "arvobold" */
+@font-face {
+	font-family: 'arvobold';
+	src: url('../fonts/arvo-bold-webfont.eot');
+	src: url('../fonts/arvo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/arvo-bold-webfont.woff') format('woff'),
+	url('../fonts/arvo-bold-webfont.ttf') format('truetype'),
+	url('../fonts/arvo-bold-webfont.svg#arvobold') format('svg');
+	font-weight: normal; /* Peso normal */
+	font-style: normal; /* Estilo normal */
+}
+
+/* Carga la fuente "arvoregular" */
+@font-face {
+	font-family: 'arvoregular';
+	src: url('../fonts/arvo-regular-webfont.eot');
+	src: url('../fonts/arvo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/arvo-regular-webfont.woff') format('woff'),
+	url('../fonts/arvo-regular-webfont.ttf') format('truetype'),
+	url('../fonts/arvo-regular-webfont.svg#arvoregular') format('svg');
+	font-weight: normal; /* Peso normal */
+	font-style: normal; /* Estilo normal */
+}
+
+/* Estilo de los enlaces en párrafos y secciones */
+p a,
+#body div h2 a,
+#body div div#principal div.news h4 a,
+#body div #registroDeVentasMensuales ul li div h3 a,
+#body div #registrarProspectoNuevo h3 a
+#body  {
+	color: #0294dd; /* Color de enlace */
+}
+
+/* Estilo de los enlaces al pasar el mouse */
+p a:hover,
+#body div h2 a:hover,
+#body div div#principal div.news h4 a:hover,
+#body div #registroDeVentasMensuales ul li div h3 a:hover,
+#body div #registrarProspectoNuevo h3 a:hover,
+p a.more:hover {
+	color: #ffc000; /* Color de enlace al hover */
+}
+
+/* Estilo de los enlaces de tipo "more" */
+p a.more {
+	color: #d1d3d4; /* Color de enlace "more" */
+	font-size: 12px; /* Tamaño de fuente */
+	text-decoration: none; /* Sin subrayado */
+}
+
+/* Estilo del encabezado */
+#header {
+	height: 147px; /* Altura del encabezado */
+	margin: 0 auto; /* Centrar el encabezado */
+	padding: 39px 10px 0; /* Relleno interno */
+	width: 940px; /* Ancho del encabezado */
+}
+
+/* Estilo de imágenes dentro del encabezado y algunas secciones */
+#header a img,
+#body div #about div div.figure img,
+#body div #contactos div form label {
+	display: block; /* Mostrar como bloque */
+}
+
+/* Estilo del cuerpo */
+#body {
+	background: url(../images/bg-wave.png) repeat; /* Fondo del cuerpo */
+}
+
+/* Estilo de los divs dentro del cuerpo */
+#body > div {
+	background: url(../images/bg-content.png) repeat; /* Fondo del contenido */
+	margin: 0 auto; /* Centrar el contenido */
+	overflow: hidden; /* Ocultar desbordes */
+	padding: 47px 10px; /* Relleno interno */
+	width: 940px; /* Ancho del contenido */
+}
+
+/* Estilo de la navegación */
+#body div #navigation {
+	font-family: 'arvobold'; /* Fuente de navegación */
+	float:left; /* Flotante a la izquierda */
+	list-style: none; /* Sin lista */
+	margin: 0; /* Sin márgenes */
+	padding: 0; /* Sin relleno */
+}
+
+/* Estilo de los enlaces de navegación */
+#body div #navigation li a {
+	color: #d1d3d4; /* Color del enlace */
+	display: block; /* Mostrar como bloque */
+	height: 60px; /* Altura de los enlaces */
+	line-height: 64px; /* Altura de línea */
+	padding: 0 25px; /* Relleno interno */
+	text-align: center; /* Alinear al centro */
+	text-decoration: none; /* Sin subrayado */
+	text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+/* Estilo de los enlaces de navegación (link1) */
+#body div #navigation li a.link1 {
+	background: #02164d; /* Fondo del enlace */
+}
+
+/* Estilo de los enlaces de navegación (link2) */
+#body div #navigation li a.link2 {
+	background: #001f64; /* Fondo del enlace */
+}
+
+/* Estilo para el enlace de navegación actual */
+#body div #navigation li.current a {
+	background: #d4d1d1; /* Fondo del enlace activo */
+	color: #02164d; /* Color del texto activo */
+}
+
+/* Estilo para el enlace activo al pasar el mouse */
+#body div #navigation li.current a:hover {
+	color: #02164d; /* Color del texto al hover */
+}
+
+/* Estilo para enlaces de navegación al pasar el mouse */
+#body div #navigation li a:hover {
+	color: #fff799; /* Color al hover */
+}
+
+/* Estilo de las secciones principales */
+#body div div#principal,
+#body div div#registrarProspectoNuevo,
+#body div div#registroDeVentasMensuales,
+#body div div#prospectosMensuales,
+#body div div#contactos {
+	float: left; /* Flotante a la izquierda */
+	width: 90px; /* Ancho de las secciones */
+}
+
+/* Estilo del título principal */
+#body div h1 {
+	color: #fff799; /* Color del título */
+	font-family: 'ultraregular'; /* Fuente del título */
+	font-size: 60px; /* Tamaño de fuente */
+	font-weight: normal; /* Peso normal */
+	line-height: 48px; /* Altura de línea */
+	margin: 0; /* Sin márgenes */
+}
+
+/* Estilo para el texto en el título */
+#body div h1 span {
+	text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+/* Estilo del subtítulo en la sección principal */
+
+
+/* Estilo del enlace en la sección al pasar el mouse */
+#body div div#principal div.section a:hover {
+	color: #02164d; /* Color al hover */
+}
+
+/* Estilo del contenido dentro de cada elemento de la lista */
+#body div #registroDeVentasMensuales ul li div {
+	padding: 10px; /* Relleno interno */
+}
+
+/* Estilo del encabezado dentro de los elementos de la lista */
+#body div #registroDeVentasMensuales ul li div h3 {
+	margin: 0; /* Sin márgenes */
+	padding: 0 0 10px; /* Relleno inferior */
+}
+
+
+
+
+/* Estilo de la sección de contactos */
+#body div #contact {
+    display: flex; /* Usar flexbox para alinear los elementos */
+    padding:10px ; /* Relleno interno */
+	background-color: rgba(91, 159, 255, 0.4);  /* Color de fondo */
+	border-radius: 30px;
+}
+
+/* Estilo para el formulario */
+#contact form {
+    display: flex; /* Usar flexbox para alinear los elementos del formulario */
+    flex-direction:column; /* Colocar elementos en columna */
+    width: 100%; /* Ancho del formulario */
+    max-width: 400px; /* Ancho máximo del formulario */
+    margin: auto; /* Centrar el formulario */
+
+}
+
+/* Estilo de los labels */
+#contact label {
+    margin: 10px 10px 15px; /* Márgenes para espaciar los labels */
+}
+
+/* Estilo de los inputs y textarea */
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact textarea {
+    padding: 10px; /* Relleno interno */
+    border: 1px solid #043bff; /* Borde */
+    border-radius: 14px; /* Bordes redondeados */
+    width: auto; /* Ancho completo */
+}
+
+/* Estilo del botón de enviar */
+#contact input[type="submit"] {
+    margin-top: 15px; /* Margen superior */
+    padding: auto; /* Relleno interno */
+    border-radius : 10%; /* Sin borde */
+    background-color: #02164d; /* Color de fondo */
+    color: white; /* Color del texto */
+    cursor:pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+#contact input[type="submit"]:hover {
+    background-color: #001f64; /* Color de fondo en hover */
+	border-radius: 30%;
+}
+
+/* Estilo del pie de página */
+#footer {
+    margin: 0 auto;
+    padding: 0 10px;
+    width: 940px; /* Ancho del footer */
+}
+
+#footer > div {
+    overflow: hidden;
+    padding: 45px 0 0;
+}
+
+#footer div #connect {
+    float: right;
+    overflow: hidden;
+    width: 140px;
+}
+
+#footer div #connect a {
+    display: block;
+    float: left;
+    height: 26px;
+    margin: 12px 10px 0;
+    text-indent: -99999px; /* Oculta el texto del enlace */
+}
+
+#footer > p {
+    color: #0f378f;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 47px 0 29px;
+    text-align: center;
+}
+
+
+/* Estilo del footer principal */
+#footer {
+    margin: 0 auto; /* Centrar el footer horizontalmente */
+    padding: 0 10px; /* Relleno interno a los lados */
+    width: 940px; /* Ancho fijo del footer */
+}
+
+/* Estilo para el contenedor dentro del footer */
+#footer > div {
+    overflow: hidden; /* Ocultar cualquier contenido desbordante */
+    padding: 45px 0 0; /* Relleno superior, sin relleno inferior */
+}
+
+/* Estilo para la sección de conectividad social */
+#footer div #connect {
+    float: right; /* Flotar a la derecha */
+    overflow: hidden; /* Ocultar contenido desbordante */
+    width: 140px; /* Ancho de la sección de conectividad */
+}
+
+/* Estilo para los enlaces de redes sociales dentro de #connect */
+#footer div #connect a {
+    display: block; /* Mostrar como bloque */
+    float: left; /* Flotar a la izquierda */
+    height: 26px; /* Altura del enlace */
+    margin: 12px 10px 0; /* Márgenes: superior y a los lados */
+    text-indent: -99999px; /* Ocultar el texto, dejando solo el icono visible */
+}
+
+/* Estilo específico para el enlace de Facebook */
+#footer div #connect a#facebook {
+    background: url(../images/icons.png) no-repeat; /* Fondo con icono de Facebook */
+    height: 26px; /* Altura del enlace */
+    width: 12px; /* Ancho del enlace */
+}
+
+/* Estilo específico para el enlace de Twitter */
+#footer div #connect a#twitter {
+    background: url(../images/icons.png) no-repeat 0 -35px; /* Fondo con icono de Twitter */
+    width: 32px; /* Ancho del enlace */
+}
+
+/* Estilo específico para el enlace de Google+ */
+#footer div #connect a#googleplus {
+    background: url(../images/icons.png) no-repeat 0 -97px; /* Fondo con icono de Google+ */
+    width: 26px; /* Ancho del enlace */
+}
+
+/* Estilo para el párrafo en el footer */
+#footer > p {
+    color: #0f378f; /* Color del texto */
+    font-size: 12px; /* Tamaño de fuente */
+    line-height: 20px; /* Altura de línea */
+    padding: 47px 0 29px; /* Relleno: superior, sin inferior */
+    text-align: center; /* Alinear el texto al centro */
+}

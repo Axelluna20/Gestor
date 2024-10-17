@@ -1,0 +1,87 @@
+/* Estilo básico para el cuerpo de la página */
+
+/* Opcional: si deseas un margen o espaciado adicional para el logo */
+header img {
+    max-width: 190px; /* Asegúrate de que el logo no sea demasiado grande */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+header {
+    height: 190px;
+    background-color: rgba(255, 255, 255, 0.4); /* Color con transparencia */
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+}
+
+body {
+    /* Cambia la URL de la imagen de fondo a la que desees */
+    background: url(../images/bg-body.png) repeat;
+    background-size: cover; /* Hace que la imagen cubra toda la página */
+    background-position: center; /* Centra la imagen de fondo */
+    font-family: Arial, sans-serif; /* Fuente general de la página */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el padding predeterminado */
+}
+
+/* Contenedor para el formulario */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con algo de transparencia */
+    width: 350px; /* Ancho fijo del contenedor */
+    margin: 100px auto; /* Centra el contenedor en la página */
+    padding: 20px; /* Espaciado interno del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra alrededor del contenedor */
+    text-align: center;
+}
+
+/* Estilo para los encabezados */
+h2 {
+    text-align: center; /* Centra el texto del encabezado */
+}
+
+/* Estilo para los grupos de formulario */
+.form-group {
+    margin-bottom: 15px; /* Espaciado inferior entre grupos */
+}
+
+/* Estilo para las etiquetas del formulario */
+label {
+    display: block; /* Hace que las etiquetas ocupen toda la línea */
+    margin-bottom: 5px; /* Espaciado inferior de las etiquetas */
+}
+
+/* Estilo para los campos de entrada */
+input {
+    width: 80%; /* Hace que los campos de entrada ocupen todo el ancho del contenedor */
+    padding: 8px; /* Espaciado interno de los campos */
+    border: 1px solid #0042a5; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados para los campos */
+}
+
+/* Estilo para el botón */
+button {
+    width: 80%; /* Hace que el botón ocupe todo el ancho del contenedor */
+    padding: 10px; /* Espaciado interno del botón */
+    background-color: #1786fc; /* Color de fondo azul */
+    color: rgb(255, 255, 255); /* Color del texto en blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+/* Estilo para los enlaces */
+.links {
+    text-align: center; /* Centra el texto de los enlaces */
+    margin-top: 10px; /* Espaciado superior de los enlaces */
+}
+
+.links a {
+    display: block; /* Hace que cada enlace ocupe toda la línea */
+    margin: 8px 0; /* Espaciado vertical entre enlaces */
+    color: #007bff; /* Color azul para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+.links a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón sobre el enlace */
+}

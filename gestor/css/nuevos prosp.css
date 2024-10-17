@@ -1,0 +1,153 @@
+
+
+/* Carga la fuente "ultraregular" */
+@font-face {
+	font-family: 'ultraregular';
+	src: url('../fonts/ultra-webfont.eot'); /* Archivo .eot para IE */
+	src: url('../fonts/ultra-webfont.eot?#iefix') format('embedded-opentype'), /* Soporte para IE */
+	url('../fonts/ultra-webfont.woff') format('woff'), /* Archivo .woff */
+	url('../fonts/ultra-webfont.ttf') format('truetype'), /* Archivo .ttf */
+	url('../fonts/ultra-webfont.svg#ultraregular') format('svg'); /* Archivo .svg */
+	font-weight: normal; /* Peso normal */
+	font-style: normal; /* Estilo normal */
+}
+
+/* Carga la fuente "arvobold" */
+@font-face {
+	font-family: 'arvobold';
+	src: url('../fonts/arvo-bold-webfont.eot');
+	src: url('../fonts/arvo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/arvo-bold-webfont.woff') format('woff'),
+	url('../fonts/arvo-bold-webfont.ttf') format('truetype'),
+	url('../fonts/arvo-bold-webfont.svg#arvobold') format('svg');
+	font-weight: normal; /* Peso normal */
+	font-style: normal; /* Estilo normal */
+}
+
+/* Carga la fuente "arvoregular" */
+@font-face {
+	font-family: 'arvoregular';
+	src: url('../fonts/arvo-regular-webfont.eot');
+	src: url('../fonts/arvo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/arvo-regular-webfont.woff') format('woff'),
+	url('../fonts/arvo-regular-webfont.ttf') format('truetype'),
+	url('../fonts/arvo-regular-webfont.svg#arvoregular') format('svg');
+	font-weight: normal; /* Peso normal */
+	font-style: normal; /* Estilo normal */
+}
+
+/* Estilo del encabezado */
+#header {
+	height: 140px; /* Altura del encabezado */
+	margin: 0 auto; /* Centrar el encabezado */
+	padding: 30px 10px 0; /* Relleno interno */
+	width: 940px; /* Ancho del encabezado */
+}
+
+/*este sirve para dar formato en el body ni idea de por que xd */
+#header a img{
+display:flexbox; /* Mostrar como bloque */
+	max-width: 150px;
+    justify-content: right;
+	
+} 
+
+
+/* Establece el fondo, color y fuentes generales del cuerpo */
+body {
+	background: url(../images/bg-body.png) repeat; /* Fondo del cuerpo */
+	color: #000000; /* Color del texto */
+	font-family: Arial, Helvetica, sans-serif; /* Fuente general */
+	font-size: 14px; /* Tamaño de fuente */
+	margin: 0; /* Elimina márgenes */
+	min-width: 960px; /* Ancho mínimo */
+	padding: 0; /* Elimina relleno */
+}
+
+
+
+
+/* Estilo del cuerpo */
+#body {
+	background: url(../images/bg-wave.png) repeat; /* Fondo del cuerpo */
+}
+
+/*BLOQUE DE BOTONES*/
+#body div {
+	display: flex; /* Mostrar como bloque */
+	max-width: 150%;
+	justify-content: left;
+}
+
+/* Estilo de la navegación */
+#body div #navigation {
+	font-family:'ARIAL BLACK';
+	float:inline-start; /* Flotante a la izquierda */
+	list-style: none; /* Sin lista */
+	margin: 0; /* Sin márgenes */
+	padding: 0; /* Sin relleno */
+}
+
+
+/* Estilo de los enlaces de navegación */
+#body div #navigation li a {
+	color: #d1d3d4; /* Color del enlace */
+	display: block; /* Mostrar como bloque */
+	height: 60px; /* Altura de los enlaces */
+	line-height: 64px; /* Altura de línea */
+	padding: 0 25px; /* Relleno interno */
+	text-align: center; /* Alinear al centro */
+	text-decoration: none; /* Sin subrayado */
+	text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+/* Estilo de los enlaces de navegación (link1) */
+#body div #navigation li a.link1 {
+	background: #02164d; /* Fondo del enlace */
+}
+
+/* Estilo de los enlaces de navegación (link2) */
+#body div #navigation li a.link2 {
+	background: #001f64; /* Fondo del enlace */
+}
+
+/* Estilo para el enlace de navegación actual */
+#body div #navigation li.current a {
+	background: #d4d1d1; /* Fondo del enlace activo */
+	color: #02164d; /* Color del texto activo */
+}
+
+/* Estilo para el enlace activo al pasar el mouse */
+#body div #navigation li.current a:hover {
+	color: #02164d; /* Color del texto al hover */
+}
+
+/* Estilo para enlaces de navegación al pasar el mouse */
+#body div #navigation li a:hover {
+	color: #fff799; /* Color al hover */
+}
+
+               /*HASTA AQUI ACABAN LOS BOTONES DE NAVEGACION*/
+			   /* aqui inicia el formulario de nuevos prospectos*/
+
+
+body form {
+				background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con algo de transparencia */
+				width: 350px; /* Ancho fijo del contenedor */
+				margin: 100px auto; /* Centra el contenedor en la página */
+				padding: 20px; /* Espaciado interno del contenedor */
+				border-radius: 10px; /* Bordes redondeados */
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra alrededor del contenedor */
+				text-align: center;
+			}
+
+#body form input[type="submit"]{
+	display:initial;
+	margin-top: 15px; /* Margen superior */
+    padding: 10 px 20 px; 
+    border-radius : 10%; /* Sin borde */
+    background-color: #02164d; /* Color de fondo */
+    color: white; /* Color del texto */
+    cursor:pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-align: center;
+			}
