@@ -47,8 +47,8 @@
 /*este sirve para dar formato en el body ni idea de por que xd */
 #header a img{
 display:flexbox; /* Mostrar como bloque */
-	max-width: 150px;
-    justify-content: right;
+	max-width: 1560px;
+    justify-content: left;
 	
 } 
 

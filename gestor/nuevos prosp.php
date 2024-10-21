@@ -47,44 +47,24 @@ if (!isset($_SESSION['usuario'])) {
         <div>
         <!-- Abre un contenedor interno para organizar el contenido -->
 
-            <ul id="navigation">
-            <!-- Comienza una lista desordenada para los enlaces de navegación -->
-
-                <li class="current">
-                <!-- Abre un elemento de lista y lo marca como "actual" para resaltar la página actual -->
-
-                    <a href="nuevos prosp.php" class="link2">Registrar Nuevos Prospectos</a>
-                    <!-- Crea un enlace que lleva a nuevos prosp.html con el texto correspondiente -->
-                </li>
-                <!-- Cierra el elemento de lista -->
-
-                <li>
-                <!-- Abre otro elemento de lista -->
-
-                    <a href="ventas mensuales.html" class="link1">Registro De Ventas Mensuales</a>
-                    <!-- Crea un enlace que lleva a ventas mensuales.html -->
-                </li>
-                <!-- Cierra el elemento de lista -->
-
-                <li>
-                    <!-- Abre otro elemento de lista -->
-    
-                        <a href="prospectos mensuales.html" class="link2">Prospectos Mensuales</a>
-                        <!-- Crea un enlace que lleva a prospectos mensuales.html -->
-                    </li>
-                    <!-- Cierra el elemento de lista -->
-    
-                    <li>
-                    <!-- Abre otro elemento de lista -->
-    
-                        <a href="contacto.html" class="link1">Contactos</a>
-                        <!-- Crea un enlace que lleva a contacto.html -->
-                    </li>
-                    <!-- Cierra el elemento de lista -->
-    
-                </ul>
-                <!-- Cierra la lista de navegación -->
-    
+        <ul id="navigation">
+				
+				<li class="current">
+					<a href="nuevos prosp.php" class="link2">Registrar Nuevo Prospecto</a>
+				</li>
+				<li>
+					<a href="ventas mensuales.html" class="link1">Registro De Ventas Mensuales</a>
+				</li>
+				<li>
+					<a href="prospectos mensuales.html" class="link2">Prospectos Mensuales</a>
+				</li>
+				<li >
+					<a href="contacto.html" class="link1">Contactos</a>
+				</li>
+				<li>
+					<a href="login.html" class="link2">Cerrar Sesión</a>
+				</li>
+			</ul>
             </div>
             <!-- Cierra el contenedor interno -->
     
