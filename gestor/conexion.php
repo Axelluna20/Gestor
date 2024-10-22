@@ -18,8 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre_apellido = $conn->real_escape_string($_POST['nombre_apellido']);
     $correo = $conn->real_escape_string($_POST['correo']);
     $departamento = $conn->real_escape_string($_POST['departamento']);
-    $contrasena = $conn->real_escape_string($_POST['contrasena']);
-    $confirmar_contrasena = $conn->real_escape_string($_POST['confirmar_contrasena']);
+    $contrasena = $_POST['contrasena']; // Se mantiene en texto plano
+    $confirmar_contrasena = $_POST['confirmar_contrasena']; // Se mantiene en texto plano
     $usuario = $conn->real_escape_string($_POST['usuario']);
 
     // Verificar si algún campo está vacío
@@ -40,11 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Insertar datos en la tabla 'registro'
-    $sql = "INSERT INTO registro (nombre_apellido, correo, departamento, contrasena, usuario) 
-            VALUES ('$nombre_apellido', '$correo', '$departamento', '$contrasena', '$usuario')";
+    // Insertar datos en la tabla 'registro' usando declaraciones preparadas
+    $stmt = $conn->prepare("INSERT INTO registro (nombre_apellido, correo, departamento, contrasena, usuario) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $nombre_apellido, $correo, $departamento, $contrasena, $usuario);
 
-    if ($conn->query($sql) === TRUE) {
+    if ($stmt->execute()) {
         // Mostrar alerta y redirigir al login
         echo "<script>
                 alert('Registrado exitosamente');
@@ -52,10 +52,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               </script>";
     } else {
         echo "<script>
-                alert('Error al registrar el usuario: " . $conn->error . "');
+                alert('Error al registrar el usuario: " . $stmt->error . "');
                 window.history.back();
               </script>";
     }
+
+    // Cerrar la declaración
+    $stmt->close();
 }
 
 // Cerrar conexión

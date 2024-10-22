@@ -33,12 +33,9 @@ if (!isset($_SESSION['usuario'])) {
 <body>
 <!-- Comienza el cuerpo del documento, donde se coloca el contenido visible -->
 
-    <div id="header">
-    <!-- Abre un contenedor para el encabezado de la página -->
-
-        <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
-        <!-- Crea un enlace que lleva a la página index.html y contiene una imagen que sirve como logo -->
-    </div>
+<div id="header">
+		<img src="images/Grupo_Almatodo_sin_fondo.png" width="150" alt="Logo"></a>
+	</div>
     <!-- Cierra el contenedor del encabezado -->
 
     <div id="body">
@@ -48,7 +45,6 @@ if (!isset($_SESSION['usuario'])) {
         <!-- Abre un contenedor interno para organizar el contenido -->
 
         <ul id="navigation">
-				
 				<li class="current">
 					<a href="nuevos prosp.php" class="link2">Registrar Nuevo Prospecto</a>
 				</li>
@@ -65,44 +61,69 @@ if (!isset($_SESSION['usuario'])) {
 					<a href="login.html" class="link2">Cerrar Sesión</a>
 				</li>
 			</ul>
+                <!-- Cierra la lista de navegación -->
+    
             </div>
             <!-- Cierra el contenedor interno -->
     
             <div>
             <!-- Abre un nuevo contenedor para el formulario -->
     
-                <form action="conexionN.php" method="POST">
-                <!-- Comienza un formulario que envía datos a conexionN.php -->
+            <form action="conexionNP.php" method="POST">
+    <!-- Comienza un formulario que envía datos a conexionNP.php -->
     
-                    <h3>REGISTRO DE NUEVO PROSPECTO</h3>
-                    <!-- Encabezado para el formulario -->
-    
-                    <label for="NOMBRE">NOMBRE:
-                        <input type="text" id="NOMBRE" name="nombre" required>
-                        <!-- Campo de entrada para el nombre, etiquetado como "NOMBRE" -->
-                    </label><br>
-    
-                    <label for="CORREO">CORREO ELECTRONICO:
-                        <input type="email" id="CORREO" name="correo" required>
-                        <!-- Campo de entrada para el correo electrónico, etiquetado como "CORREO ELECTRONICO" -->
-                    </label><br>
-    
-                    <label for="NUMERO">NUMERO DE CONTACTO:
-                        <input type="text" id="NUMERO" name="numero" required>
-                        <!-- Campo de entrada para el número de contacto, etiquetado como "NUMERO DE CONTACTO" -->
-                    </label><br>
-    
-                    <label for="DIRECCION">DIRECCION FISICA:</label>
-                    <!-- Etiqueta para el campo de dirección física -->
-    
-                    <textarea id="DIRECCION" name="direccion" class="auto-adjust" oninput="autoResize(this)" required></textarea>
-                    <!-- Campo de texto para la dirección física, con ajuste automático de tamaño -->
-    
-                    <input type="submit" class="REGISTRAR" value="REGISTRAR PROSPECTO">
+    <h3>REGISTRO DE NUEVO PROSPECTO</h3>
+    <!-- Encabezado para el formulario -->
+
+    <label for="NOMBRE">NOMBRE:
+        <input type="text" id="nombre" name="nombre" required>
+    </label><br>
+
+    <label for="EMPRESA">EMPRESA:
+        <input type="text" id="empresa" name="empresa" required>
+    </label><br>
+
+    <label for="PRODUCTO">PRODUCTO:
+        <input type="text" id="producto" name="producto" required>
+    </label><br>
+
+    <label for="CARACTERISTICAS ESPECIFICAS">CARACTERISTICAS ESPECIFICAS:
+        <textarea id="DIRECCION" name="direccion" class="auto-adjust" oninput="autoResize(this)" required></textarea>
+    </label><br>
+
+    <label for="PROVEEDOR">PROVEEDOR (MAZIONE, HM):
+        <input type="text" id="proveedor" name="proveedor" required>
+    </label><br>
+
+    <label for="CORREO">CORREO ELECTRONICO:
+        <input type="email" id="correo" name="correo">
+        <!-- Campo de entrada para el correo electrónico, etiquetado como "CORREO ELECTRONICO", ahora opcional -->
+    </label><br>
+
+    <label for="NUMERO">NUMERO DE CONTACTO:
+        <input type="text" id="numero" name="numero" required>
+        <!-- Campo de entrada para el número de contacto, etiquetado como "NUMERO DE CONTACTO" -->
+    </label><br>
+
+    <label for="DIRECCION">DIRECCION FISICA:</label>
+    <!-- Etiqueta para el campo de dirección física -->
+
+    <textarea id="DIRECCION" name="direccion" class="auto-adjust" oninput="autoResize(this)" required></textarea>
+    <!-- Campo de texto para la dirección física, con ajuste automático de tamaño -->
+
+    <label for="CONSTANCIA FISCAL">CONSTANCIA FISCAL:
+        <input type="text" id="constancia" name="constancia">
+
+        <!-- Campo de entrada para la constancia fiscal, ahora opcional -->
+    </label><br>
+
+    <input type="submit" value="Registrar Nuevo Prospecto">
+    <!-- Botón para enviar el formulario -->
+
                     <input type="submit" class="EDITAR" value="EDITAR PROSPECTO">
                     <input type="submit" class="ACTUALIZAR" value="ACTUALIZAR PROSPECTO">
                     <input type="submit" class="ELIMINAR" value="ELIMINAR PROSPECTO">
-
+                    <a href="contacto.html" class="submit">Contactos</a>
                     <!-- Botones para las diferentes acciones -->
                 </form>
                 <!-- Cierra el formulario -->

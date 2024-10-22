@@ -39,7 +39,7 @@
 /* Estilo del encabezado */
 #header {
 	height: 140px; /* Altura del encabezado */
-	margin: 0 auto; /* Centrar el encabezado */
+	margin: left; /* Centrar el encabezado */
 	padding: 30px 10px 0; /* Relleno interno */
 	width: 940px; /* Ancho del encabezado */
 }
@@ -47,8 +47,8 @@
 /*este sirve para dar formato en el body ni idea de por que xd */
 #header a img{
 display:flexbox; /* Mostrar como bloque */
-	max-width: 1560px;
-    justify-content: left;
+	max-width: 150px;
+    justify-content: right;
 	
 } 
 
@@ -59,7 +59,7 @@ body {
 	color: #000000; /* Color del texto */
 	font-family: Arial, Helvetica, sans-serif; /* Fuente general */
 	font-size: 14px; /* Tamaño de fuente */
-	margin: 0; /* Elimina márgenes */
+	margin: 0%; /* Elimina márgenes */
 	min-width: 960px; /* Ancho mínimo */
 	padding: 0; /* Elimina relleno */
 }
@@ -75,14 +75,14 @@ body {
 /*BLOQUE DE BOTONES*/
 #body div {
 	display: flex; /* Mostrar como bloque */
-	max-width: 150%;
-	justify-content: left;
+	max-width: 50%;
+	justify-content: 50%;
 }
 
 /* Estilo de la navegación */
 #body div #navigation {
 	font-family:'ARIAL BLACK';
-	float:inline-start; /* Flotante a la izquierda */
+	float:inline-end; /* Flotante a la izquierda */
 	list-style: none; /* Sin lista */
 	margin: 0; /* Sin márgenes */
 	padding: 0; /* Sin relleno */
@@ -93,7 +93,7 @@ body {
 #body div #navigation li a {
 	color: #d1d3d4; /* Color del enlace */
 	display: block; /* Mostrar como bloque */
-	height: 60px; /* Altura de los enlaces */
+	height: 60px 80px ; /* Altura de los enlaces */
 	line-height: 64px; /* Altura de línea */
 	padding: 0 25px; /* Relleno interno */
 	text-align: center; /* Alinear al centro */
@@ -131,23 +131,62 @@ body {
 			   /* aqui inicia el formulario de nuevos prospectos*/
 
 
-body form {
+body div form {
 				background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con algo de transparencia */
-				width: 350px; /* Ancho fijo del contenedor */
-				margin: 100px auto; /* Centra el contenedor en la página */
-				padding: 20px; /* Espaciado interno del contenedor */
-				border-radius: 10px; /* Bordes redondeados */
-				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra alrededor del contenedor */
-				text-align: center;
+				width: 500px; /* Ancho fijo del contenedor */
+				margin: -280px 0 50px 50px; /* Más margen en la izquierda para mover el formulario hacia la izquierda */
+				padding: 100px; /* Espaciado interno del contenedor */
+				border-radius: 50px; /* Bordes redondeados */
+				box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* Sombra alrededor del contenedor */
+				text-align:left;
+				margin-inline: 70%
+				;
 			}
+		
 
 #body form input[type="submit"]{
 	display:initial;
-	margin-top: 15px; /* Margen superior */
-    padding: 10 px 20 px; 
+	margin-top: 10px; /* Margen superior */
+    padding: 10 px 100 px; 
     border-radius : 10%; /* Sin borde */
     background-color: #02164d; /* Color de fondo */
     color: white; /* Color del texto */
     cursor:pointer; /* Cambia el cursor al pasar sobre el botón */
     text-align: center;
+	
 			}
+
+
+a{
+	display:initial;
+	margin-top: 10px; /* Margen superior */
+    padding: 10 px 100 px; 
+    border-radius : 10%; /* Sin borde */
+    background-color: #02164d; /* Color de fondo */
+    color: white; /* Color del texto */
+    cursor:pointer; /* Cambia el cursor al pasar sobre el botón */
+    text-align: center;
+}
+
+			
+			label {
+				display: block; /* hace que el label ocupe toda la línea */
+				margin-bottom: 5px; /* separa el label del input */
+				
+			}
+			
+			input {
+				display: block; /* opcional: hace que el input también ocupe toda la línea*/
+				margin-left: 20px;
+			}
+
+			textarea {
+				border: 1px solid #ccc; /* Borde gris */
+				padding: 10px; /* Espaciado interno */
+				width: 100%; /* Ancho completo */
+				border-radius: 4px; /* Bordes redondeados */
+				font-size: 16px; /* Tamaño de fuente */
+				min-height: 3px; /* Altura mínima */
+				resize:auto; /* Deshabilitar el cambio de tamaño manual */
+			    margin-left: 20px;
+			}			
