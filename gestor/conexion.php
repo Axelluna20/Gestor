@@ -61,6 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 
-// Cerrar conexión
-$conn->close();
+// NOTA: No cerrar la conexión aquí
+// Deja que los archivos que incluyen este archivo manejen el cierre de la conexión si es necesario.
 ?>

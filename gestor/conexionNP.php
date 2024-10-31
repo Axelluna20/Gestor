@@ -27,18 +27,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $producto = $_POST['producto'];
     $caracteristicas = $_POST['caracteristicas'];
     $proveedor = $_POST['proveedor'];
+    $correo = $_POST['correo']; // Capturar correo
+    $vendedor = $_POST['vendedor']; // Capturar vendedor
     $numero = $_POST['numero'];
     $direccion = $_POST['direccion'];
     $constancia = $_POST['constancia']; // Opcional
+    $estatus = $_POST['estatus']; 
 
     // Consulta para registrar el prospecto
-    $sql = "INSERT INTO nuevo_prospecto (nombre, empresa, producto, caracteristicas, proveedor, numero, direccion, constancia) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO nuevo_prospecto (nombre, empresa, producto, caracteristicas, proveedor, correo, vendedor, numero, direccion, constancia, estatus) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     
     // Verifica que la preparación de la consulta fue exitosa
     if ($stmt) {
         // Vincular parámetros
-        $stmt->bind_param("ssssssss", $nombre, $empresa, $producto, $caracteristicas, $proveedor, $numero, $direccion, $constancia);
+        $stmt->bind_param("sssssssssss", $nombre, $empresa, $producto, $caracteristicas, $proveedor, $correo, $vendedor, $numero, $direccion, $constancia, $estatus);
         
         // Ejecutar la consulta
         if ($stmt->execute()) {
@@ -63,8 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <h2>$mensaje</h2>
-        <p>Serás redirigido a la página anterior. Si no, haz clic en el siguiente enlace: <a href='nuevos prosp.php'>Volver</a></p>
-        <meta http-equiv='refresh' content='5;url=nuevos prosp.php'> <!-- Redirige después de 5 segundos -->
+        <p>Serás redirigido a la página anterior. Si no, haz clic en el siguiente enlace: <a href='prospectos mensuales.php'>Volver</a></p>
+        <meta http-equiv='refresh' content='1;url=prospectos mensuales.php'> <!-- Redirige después de 5 segundos -->
     </body>
     </html>";
     exit; // Asegúrate de salir después de mostrar el mensaje

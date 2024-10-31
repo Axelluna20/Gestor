@@ -1,13 +1,11 @@
-/* PROSPECTOS MENSUALES*/
-
 /* Carga la fuente "ultraregular" */
 @font-face {
     font-family: 'ultraregular';
     src: url('../fonts/ultra-webfont.eot'); /* Archivo .eot para IE */
     src: url('../fonts/ultra-webfont.eot?#iefix') format('embedded-opentype'), /* Soporte para IE */
-         url('../fonts/ultra-webfont.woff') format('woff'), /* Archivo .woff */
-         url('../fonts/ultra-webfont.ttf') format('truetype'), /* Archivo .ttf */
-         url('../fonts/ultra-webfont.svg#ultraregular') format('svg'); /* Archivo .svg */
+    url('../fonts/ultra-webfont.woff') format('woff'), /* Archivo .woff */
+    url('../fonts/ultra-webfont.ttf') format('truetype'), /* Archivo .ttf */
+    url('../fonts/ultra-webfont.svg#ultraregular') format('svg'); /* Archivo .svg */
     font-weight: normal; /* Peso normal */
     font-style: normal; /* Estilo normal */
 }
@@ -17,9 +15,9 @@
     font-family: 'arvobold';
     src: url('../fonts/arvo-bold-webfont.eot');
     src: url('../fonts/arvo-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/arvo-bold-webfont.woff') format('woff'),
-         url('../fonts/arvo-bold-webfont.ttf') format('truetype'),
-         url('../fonts/arvo-bold-webfont.svg#arvobold') format('svg');
+    url('../fonts/arvo-bold-webfont.woff') format('woff'),
+    url('../fonts/arvo-bold-webfont.ttf') format('truetype'),
+    url('../fonts/arvo-bold-webfont.svg#arvobold') format('svg');
     font-weight: normal; /* Peso normal */
     font-style: normal; /* Estilo normal */
 }
@@ -29,28 +27,29 @@
     font-family: 'arvoregular';
     src: url('../fonts/arvo-regular-webfont.eot');
     src: url('../fonts/arvo-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/arvo-regular-webfont.woff') format('woff'),
-         url('../fonts/arvo-regular-webfont.ttf') format('truetype'),
-         url('../fonts/arvo-regular-webfont.svg#arvoregular') format('svg');
+    url('../fonts/arvo-regular-webfont.woff') format('woff'),
+    url('../fonts/arvo-regular-webfont.ttf') format('truetype'),
+    url('../fonts/arvo-regular-webfont.svg#arvoregular') format('svg');
     font-weight: normal; /* Peso normal */
     font-style: normal; /* Estilo normal */
 }
 
 /* Estilo del encabezado */
 #header {
-    height: 270px; /* Altura del encabezado */
-    background-color: rgba(255, 255, 255, 0.4); /* Color con transparencia */
+    height: 170px; /* Altura del encabezado */
     margin: 0 auto; /* Centrar el encabezado */
+    background-color: rgba(255, 255, 255, 0.4); /* Color con transparencia */    padding: 30px 10px 0; /* Relleno interno */
     width: 940px; /* Ancho del encabezado */
+
+    
 }
 
 /* Estilo de la imagen del logo */
 #header a img {
-    max-height: 500px;
+    max-width: 150px;
     display: block; /* Cambiado a block para centrar correctamente */
     margin: 0 auto; /* Centrar la imagen */
 }
-
 
 /* Establece el fondo, color y fuentes generales del cuerpo */
 body {
@@ -58,7 +57,7 @@ body {
     color: #ffffff; /* Color del texto */
     font-family: Arial, Helvetica, sans-serif; /* Fuente general */
     font-size: 14px; /* Tamaño de fuente */
-    margin: auto; /* Elimina márgenes */
+    margin: 0; /* Elimina márgenes */
     min-width: 960px; /* Ancho mínimo */
     padding: 0; /* Elimina relleno */
 }
@@ -68,15 +67,18 @@ body {
     background: url(../images/bg-wave.png) repeat; /* Fondo del cuerpo */
 }
 
+
+
+
 /* Estilo del contenedor del menú de navegación */
 #navigation {
     display: flex; /* Usar flexbox para la navegación */
     justify-content: center; /* Centrar horizontalmente */
     list-style: none; /* Sin lista */
     margin: 0; /* Sin márgenes */
+    border-radius: 5px;
     padding: 0; /* Sin relleno */
     background: #001f64; /* Fondo del menú */
-
 }
 
 /* Estilo de los enlaces de navegación */
@@ -89,8 +91,9 @@ body {
     display: inline-block; /* Mostrar como bloque */
     height: 60px; /* Altura de los enlaces */
     line-height: 60px; /* Altura de línea */
-    padding: 0 250px; /* Relleno interno */
+    padding: 0 25px; /* Relleno interno */
     text-align: center; /* Alinear al centro */
+    border-radius: 5px;
     text-decoration: none; /* Sin subrayado */
     text-transform: uppercase; /* Texto en mayúsculas */
     white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
@@ -101,7 +104,9 @@ body {
     background: #02164d; /* Fondo del enlace */
     color: #fff; /* Color del texto */
     padding: 10px 15px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
     border-radius: 5px; /* Bordes redondeados */
+    display: inline-block; /* Para permitir padding y margenes */
 }
 
 /* Estilo de los enlaces de navegación (link2) */
@@ -109,29 +114,40 @@ body {
     background: #001f64; /* Fondo del enlace */
     color: #fff; /* Color del texto */
     padding: 10px 15px; /* Espaciado interno */
+    text-decoration: none; /* Sin subrayado */
     border-radius: 5px; /* Bordes redondeados */
+    display: inline-block; /* Para permitir padding y margenes */
 }
 
 /* Estilo para el enlace de navegación actual */
 #navigation li.current a {
     background: #d4d1d1; /* Fondo del enlace activo */
     color: #02164d; /* Color del texto activo */
+    
 }
 
-/* Efectos hover */
+/* Estilo para el enlace activo al pasar el mouse */
 #navigation li.current a:hover {
     color: #fdfeff; /* Color del texto al hover */
 }
 
+
+/* Estilo para enlaces de navegación al pasar el mouse */
 #navigation li a:hover {
     color: #fff799; /* Color al hover */
 }
+
+
+
+
+
+
 
 /* Estilo del formulario de nuevos prospectos */
 body div form {
     background-color: rgba(255, 255, 255, 0.5); /* Fondo blanco con algo de transparencia */
     width: 500px; /* Ancho fijo del contenedor */
-    margin: auto; /* Centrar el formulario */
+    margin: 20px auto; /* Centrar el formulario */
     padding: 75px; /* Espaciado interno del contenedor */
     border-radius: 50px; /* Bordes redondeados */
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* Sombra alrededor del contenedor */
@@ -154,14 +170,6 @@ body div form input[type="submit"] {
     border: 1px solid #ccc; /* Borde gris claro */
 }
 
-/* Estilo de los botones del formulario */
-body div form input[type="submit"] {
-    background-color: #02164d; /* Color de fondo */
-    color: white; /* Color del texto */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    text-align: center;
-}
-
 /* Estilo del encabezado del formulario */
 body div form h2 {
     font-size: 24px; /* Tamaño del texto del encabezado */
@@ -169,8 +177,60 @@ body div form h2 {
     white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
 }
 
-body div form h3 {
-    font-size: 30px; /* Tamaño del texto del encabezado */
-    margin-bottom: 20px; /* Espaciado inferior */
-    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+/* Estilo de las tablas */
+table {
+    width: 100%; /* Ancho completo de la tabla */
+    border-collapse: collapse; /* Colapsa bordes para evitar espacios entre celdas */
+    margin-top: 20px; /* Agrega espacio en la parte superior de la tabla */
+}
+
+/* Estilo para las celdas de la tabla */
+th, td {
+    padding: 10px; /* Agrega espacio interno a las celdas */
+    border: 1px solid #ccc; /* Establece un borde suave alrededor de las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+    color: white;
+}
+
+/* Estilo para las cabeceras de la tabla */
+th {
+    color: black;
+    background-color: #f2f2f2; /* Color de fondo de la cabecera */
+}
+
+/* Estilo para resaltar la fila al pasar el mouse */
+tr:hover {
+    background-color: rgba(255,255,255,0.3); /* Color de fondo al pasar el mouse sobre la fila */
+}
+
+a {
+    color: #f5f6f8; /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayar al pasar el ratón sobre el enlace */
+}
+
+
+
+    .btn {
+        padding: 5px 10px;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .btn-update {
+        background-color: #4CAF50;
+    }
+    .btn-delete {
+        background-color: #f44336;
+    }
+
+
+
+/* Estilo del pie de página */
+#footer {
+    margin-top: 20px; /* Agrega espacio en la parte superior del pie de página */
+    text-align: center; /* Centra el contenido del pie de página */
 }
