@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Credenciales válidas, redirigir a nuevos prosp.php
         echo "<script>
                 alert('Inicio de sesión exitoso.');
-                window.location.href='nuevos prosp.php';
+                window.location.href='separador.php';
               </script>";
         exit();
     } else {

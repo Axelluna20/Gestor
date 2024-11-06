@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $empresa = trim($_POST['empresa']);
     $producto = trim($_POST['producto']);
     $caracteristicas = trim($_POST['caracteristicas']);
-    $proveedor = trim($_POST['proveedor']);
     $correo = trim($_POST['correo']);
     $vendedor = trim($_POST['vendedor']);
     $numero = trim($_POST['numero']);
@@ -27,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             empresa='$empresa', 
             producto='$producto', 
             caracteristicas='$caracteristicas', 
-            proveedor='$proveedor', 
             correo='$correo', 
             vendedor='$vendedor', 
             numero='$numero', 
@@ -72,10 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <label for="caracteristicas" style="color: #02164d;">CARACTERISTICAS:</label>
             <input type="text" name="caracteristicas" value="<?php echo htmlspecialchars($row['caracteristicas']); ?>" >
-            <br>
-
-            <label for="proveedor" style="color: #02164d;">PROVEEDOR:</label>
-            <input type="text" name="proveedor" value="<?php echo htmlspecialchars($row['proveedor']); ?>" >
             <br>
 
             <label for="correo" style="color: #02164d;">CORREO:</label>

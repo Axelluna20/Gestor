@@ -1,0 +1,87 @@
+/* Carga la fuente "ultraregular" */
+@font-face {
+    font-family: 'ultraregular';
+    src: url('../fonts/ultra-webfont.eot'); /* Archivo .eot para IE */
+    src: url('../fonts/ultra-webfont.eot?#iefix') format('embedded-opentype'), /* Soporte para IE */
+    url('../fonts/ultra-webfont.woff') format('woff'), /* Archivo .woff */
+    url('../fonts/ultra-webfont.ttf') format('truetype'), /* Archivo .ttf */
+    url('../fonts/ultra-webfont.svg#ultraregular') format('svg'); /* Archivo .svg */
+    font-weight: normal; /* Peso normal */
+    font-style: normal; /* Estilo normal */
+}
+
+/* Carga la fuente "arvobold" */
+@font-face {
+    font-family: 'arvobold';
+    src: url('../fonts/arvo-bold-webfont.eot');
+    src: url('../fonts/arvo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/arvo-bold-webfont.woff') format('woff'),
+    url('../fonts/arvo-bold-webfont.ttf') format('truetype'),
+    url('../fonts/arvo-bold-webfont.svg#arvobold') format('svg');
+    font-weight: normal; /* Peso normal */
+    font-style: normal; /* Estilo normal */
+}
+
+/* Carga la fuente "arvoregular" */
+@font-face {
+    font-family: 'arvoregular';
+    src: url('../fonts/arvo-regular-webfont.eot');
+    src: url('../fonts/arvo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/arvo-regular-webfont.woff') format('woff'),
+    url('../fonts/arvo-regular-webfont.ttf') format('truetype'),
+    url('../fonts/arvo-regular-webfont.svg#arvoregular') format('svg');
+    font-weight: normal; /* Peso normal */
+    font-style: normal; /* Estilo normal */
+}
+
+/* Estilo del encabezado */
+#header {
+    height: 170px; /* Altura del encabezado */
+    background-color: rgba(127, 127, 230, 0.504); /* Color con transparencia */
+    margin: 0 auto; /* Centrar el encabezado */
+    padding: 30px 10px 0; /* Relleno interno */
+    width: 940px; /* Ancho del encabezado */
+}
+
+/* Estilo de la imagen del logo */
+#header b img {
+    max-width: 150px;
+    display: block; /* Cambiado a block para centrar correctamente */
+    margin: 0 auto; /* Centrar la imagen */
+}
+
+body {
+    background: url(../images/bg-body.png) repeat; /* Fondo del cuerpo */
+    color: #ffffff; /* Color del texto */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente general */
+    font-size: 25px; /* Tamaño de fuente */
+    margin: 0; /* Elimina márgenes */
+    min-width:auto; /* Ancho mínimo */
+    padding: 0; /* Elimina relleno */
+}
+
+/* Estilo base para todos los botones */
+a {
+    background-color: #007BFF; /* Color de fondo del botón (azul) */
+    color: #fff; /* Color del texto (blanco) */
+    
+    padding: 20px 250px; /* Espaciado interno (arriba-abajo, izquierda-derecha) */
+    font-size: 20px; /* Tamaño de la fuente */
+    font-family: 'Arial', sans-serif; /* Fuente de texto */
+    text-align: center; /* Centra el texto dentro del botón */
+    display: flex; /* Hacer que se comporten como elementos en línea */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor cuando se pasa por encima */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+/* Efecto hover para los botones */
+a:hover {
+    background-color: #0056b3; /* Color de fondo cuando el cursor está sobre el botón */
+    color: #ffffff; /* Color del texto (blanco) */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño del botón */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Agrega sombra para dar un efecto de elevación */
+}
+h1{
+text-align:center ;
+}

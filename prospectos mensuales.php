@@ -38,16 +38,16 @@ if ($result === false) {
         <div>
             <ul id="navigation">
                 <li>
-                    <a href="nuevos prosp.php" class="link2">Registrar Nuevo Prospecto</a>
+                <a href="Separador.php" class="link1">Inicio</a>
                 </li>
                 <li>
-                    <a href="ventas mensuales.php" class="link1">Ventas Mensuales</a>
+                    <a href="nuevos prosp.php" class="link2">Registrar Nuevo Prospecto</a>
                 </li>
                 <li class="current">
                     <a href="prospectos mensuales.php" class="link2">Prospectos Mensuales</a>
                 </li>
                 <li>
-                    <a href="contacto.php" class="link1">Contactos</a>
+                <a href="ventas mensuales.php" class="link1">Ventas Mensuales</a>
                 </li>
                 <li>
                     <a href="logout.php" class="link2">Cerrar Sesión</a>
@@ -65,13 +65,12 @@ if ($result === false) {
                         <th>Empresa</th>
                         <th>Producto</th>
                         <th>Características</th>
-                        <th>Proveedor</th>
                         <th>Correo</th>
                         <th>Vendedor</th>
                         <th>Número</th>
                         <th>Dirección</th>
                         <th>RFC</th>
-                        <th>Estatus</th>
+                        <th>Status</th>
                         <th>Acciones</th> <!-- Columna para acciones -->
                        
                     </tr> 
@@ -86,7 +85,6 @@ if ($result === false) {
                             echo "<td>" . $row["empresa"] . "</td>";
                             echo "<td>" . $row["producto"] . "</td>";
                             echo "<td>" . $row["caracteristicas"] . "</td>";
-                            echo "<td>" . $row["proveedor"] . "</td>";
                             echo "<td>" . $row["correo"] . "</td>";
                             echo "<td>" . $row["vendedor"] . "</td>"; // Corregido para mostrar el vendedor
                             echo "<td>" . $row["numero"] . "</td>";
@@ -95,8 +93,8 @@ if ($result === false) {
                             echo "<td>" . $row["estatus"] . "</td>";
                             echo "<td>
 
-    <a href='actualizar.php?id=" . $row["ID_Prospecto"] . "' class='btn btn-update'>Actualizar</a>    |    
-<a href='borrar.php?id=" . $row["ID_Prospecto"] . "' class='btn btn-delete'>Borrar</a>
+    <a href='actualizarMK.php?id=" . $row["ID_Prospecto"] . "' class='btn btn-update'>Actualizar</a>    |    
+<a href='borrarMK.php?id=" . $row["ID_Prospecto"] . "' class='btn btn-delete'>Borrar</a>
                                  </td>";
                             echo "</tr>";
                         }

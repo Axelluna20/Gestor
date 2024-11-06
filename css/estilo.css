@@ -85,3 +85,15 @@ button {
 .links a:hover {
     text-decoration: underline; /* Subrayado al pasar el ratón sobre el enlace */
 }
+/* Estilo para el campo select */
+select {
+    width: 80%; /* Hace que el campo ocupe el ancho del contenedor */
+    padding: 8px; /* Espaciado interno del campo */
+    border: 1px solid #0042a5; /* Borde igual al de los inputs */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: white; /* Fondo blanco */
+    color: #333; /* Color del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    appearance: none; /* Remueve la apariencia predeterminada */
+    cursor: pointer; /* Cambia el cursor */
+}

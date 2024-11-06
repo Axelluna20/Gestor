@@ -8,7 +8,7 @@ if ($conexion->connect_error) {
 }
 
 // Inicializar variables
-$id = $nombre = $empresa = $producto = $caracteristicas = $proveedor = $correo = $vendedor = $numero = $direccion = $constancia = $estatus = "";
+$id = $nombre = $empresa = $producto = $caracteristicas = $correo = $vendedor = $numero = $direccion = $constancia = $estatus = "";
 $actualizado = false; // Variable para verificar si se actualizó correctamente
 
 // Verificar si se ha enviado el ID por GET
@@ -16,11 +16,11 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     // Consulta para obtener los datos del prospecto
-    $sql = "SELECT nombre, empresa, producto, caracteristicas, proveedor, correo, vendedor, numero, direccion, constancia, estatus FROM nuevo_prospecto WHERE ID_Prospecto=?";
+    $sql = "SELECT nombre, empresa, producto, caracteristicas, correo, vendedor, numero, direccion, constancia, estatus FROM nuevo_prospecto WHERE ID_Prospecto=?";
     $stmt = $conexion->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();
-    $stmt->bind_result($nombre, $empresa, $producto, $caracteristicas, $proveedor, $correo, $vendedor, $numero, $direccion, $constancia, $estatus);
+    $stmt->bind_result($nombre, $empresa, $producto, $caracteristicas, $correo, $vendedor, $numero, $direccion, $constancia, $estatus);
 
     // Obtener el resultado
     if (!$stmt->fetch()) {
@@ -40,7 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
     $empresa = $_POST['empresa'];
     $producto = $_POST['producto'];
     $caracteristicas = $_POST['caracteristicas'];
-    $proveedor = $_POST['proveedor'];
     $correo = $_POST['correo'];
     $vendedor = $_POST['vendedor'];
     $numero = $_POST['numero'];
@@ -49,9 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id'])) {
     $estatus = $_POST['estatus'];
 
     // Consulta para actualizar los datos en la tabla nuevo_prospecto
-    $sql = "UPDATE nuevo_prospecto SET nombre=?, empresa=?, producto=?, caracteristicas=?, proveedor=?, correo=?, vendedor=?, numero=?, direccion=?, constancia=?, estatus=? WHERE ID_Prospecto = ?";
+    $sql = "UPDATE nuevo_prospecto SET nombre=?, empresa=?, producto=?, caracteristicas=?, correo=?, vendedor=?, numero=?, direccion=?, constancia=?, estatus=? WHERE ID_Prospecto = ?";
     $stmt = $conexion->prepare($sql);
-    $stmt->bind_param("sssssssssssi", $nombre, $empresa, $producto, $caracteristicas, $proveedor, $correo, $vendedor, $numero, $direccion, $constancia, $estatus, $id);
+    $stmt->bind_param("ssssssssssi", $nombre, $empresa, $producto, $caracteristicas, $correo, $vendedor, $numero, $direccion, $constancia, $estatus, $id);
+
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
@@ -77,7 +77,7 @@ $conexion->close();
 <body>
     <h1 style="color: white; text-align: center;">Actualizar Prospecto</h1>
     <div>
-        <form method="POST" action="actualizar.php">
+        <form method="POST" action="actualizarMK.php">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <label for="nombre" style="color: #02164d;">Nombre:</label>
             <input type="text" name="nombre" value="<?php echo htmlspecialchars($nombre); ?>" required>
@@ -90,9 +90,6 @@ $conexion->close();
             <br>
             <label for="caracteristicas" style="color: #02164d;">Características y/o descripción de descartado:</label>
             <input type="text" name="caracteristicas" value="<?php echo htmlspecialchars($caracteristicas); ?>" required>
-            <br>
-            <label for="proveedor" style="color: #02164d;">Proveedor:</label>
-            <input type="text" name="proveedor" value="<?php echo htmlspecialchars($proveedor); ?>" required>
             <br>
             <label for="correo" style="color: #02164d;">Correo:</label>
             <input type="email" name="correo" value="<?php echo htmlspecialchars($correo); ?>" required>
@@ -110,7 +107,7 @@ $conexion->close();
             <input type="text" name="constancia" value="<?php echo htmlspecialchars($constancia); ?>" required>
             <br>
 
-            <label for="estatus">ESTATUS:</label>
+            <label for="estatus">STATUS:</label>
             <select name="estatus" id="estatus" required>
                 <option value="">--Seleccione--</option>
                 <option value="Por contactar" <?php if ($estatus == "Por contactar") echo "selected"; ?>>Por contactar</option>
@@ -118,7 +115,7 @@ $conexion->close();
                 <option value="sin contestar" <?php if ($estatus == "sin contestar") echo "selected"; ?>>Sin Contestar</option>
                 <option value="Solicitó cotizacion" <?php if ($estatus == "Solicitó cotizacion") echo "selected"; ?>>Solicitó Cotización</option>
                 <option value="Negociando cotizacion" <?php if ($estatus == "Negociando cotizacion") echo "selected"; ?>>Negociando Cotización</option>
-                <option value="Cliente fidelizado" <?php if ($estatus == "Cliente fidelizado") echo "selected"; ?>>Cliente Fidelizado</option>
+                <option value="Cliente Finalizado" <?php if ($estatus == "Cliente Finalizado") echo "selected"; ?>>Cliente Finalizado</option>
                 <option value="Descartado" <?php if ($estatus == "Descartado") echo "selected"; ?>>Descartado</option>
             </select>
             

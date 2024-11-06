@@ -1,13 +1,11 @@
-/* PROSPECTOS MENSUALES*/
-
 /* Carga la fuente "ultraregular" */
 @font-face {
     font-family: 'ultraregular';
     src: url('../fonts/ultra-webfont.eot'); /* Archivo .eot para IE */
     src: url('../fonts/ultra-webfont.eot?#iefix') format('embedded-opentype'), /* Soporte para IE */
-         url('../fonts/ultra-webfont.woff') format('woff'), /* Archivo .woff */
-         url('../fonts/ultra-webfont.ttf') format('truetype'), /* Archivo .ttf */
-         url('../fonts/ultra-webfont.svg#ultraregular') format('svg'); /* Archivo .svg */
+    url('../fonts/ultra-webfont.woff') format('woff'), /* Archivo .woff */
+    url('../fonts/ultra-webfont.ttf') format('truetype'), /* Archivo .ttf */
+    url('../fonts/ultra-webfont.svg#ultraregular') format('svg'); /* Archivo .svg */
     font-weight: normal; /* Peso normal */
     font-style: normal; /* Estilo normal */
 }
@@ -17,9 +15,9 @@
     font-family: 'arvobold';
     src: url('../fonts/arvo-bold-webfont.eot');
     src: url('../fonts/arvo-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/arvo-bold-webfont.woff') format('woff'),
-         url('../fonts/arvo-bold-webfont.ttf') format('truetype'),
-         url('../fonts/arvo-bold-webfont.svg#arvobold') format('svg');
+    url('../fonts/arvo-bold-webfont.woff') format('woff'),
+    url('../fonts/arvo-bold-webfont.ttf') format('truetype'),
+    url('../fonts/arvo-bold-webfont.svg#arvobold') format('svg');
     font-weight: normal; /* Peso normal */
     font-style: normal; /* Estilo normal */
 }
@@ -29,28 +27,28 @@
     font-family: 'arvoregular';
     src: url('../fonts/arvo-regular-webfont.eot');
     src: url('../fonts/arvo-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/arvo-regular-webfont.woff') format('woff'),
-         url('../fonts/arvo-regular-webfont.ttf') format('truetype'),
-         url('../fonts/arvo-regular-webfont.svg#arvoregular') format('svg');
+    url('../fonts/arvo-regular-webfont.woff') format('woff'),
+    url('../fonts/arvo-regular-webfont.ttf') format('truetype'),
+    url('../fonts/arvo-regular-webfont.svg#arvoregular') format('svg');
     font-weight: normal; /* Peso normal */
     font-style: normal; /* Estilo normal */
 }
 
 /* Estilo del encabezado */
 #header {
-    height: 270px; /* Altura del encabezado */
+    height: 170px; /* Altura del encabezado */
     background-color: rgba(255, 255, 255, 0.4); /* Color con transparencia */
     margin: 0 auto; /* Centrar el encabezado */
+    padding: 30px 10px 0; /* Relleno interno */
     width: 940px; /* Ancho del encabezado */
 }
 
 /* Estilo de la imagen del logo */
 #header a img {
-    max-height: 500px;
+    max-width: 150px;
     display: block; /* Cambiado a block para centrar correctamente */
     margin: 0 auto; /* Centrar la imagen */
 }
-
 
 /* Establece el fondo, color y fuentes generales del cuerpo */
 body {
@@ -58,7 +56,7 @@ body {
     color: #ffffff; /* Color del texto */
     font-family: Arial, Helvetica, sans-serif; /* Fuente general */
     font-size: 14px; /* Tamaño de fuente */
-    margin: auto; /* Elimina márgenes */
+    margin: 0; /* Elimina márgenes */
     min-width: 960px; /* Ancho mínimo */
     padding: 0; /* Elimina relleno */
 }
@@ -76,7 +74,6 @@ body {
     margin: 0; /* Sin márgenes */
     padding: 0; /* Sin relleno */
     background: #001f64; /* Fondo del menú */
-
 }
 
 /* Estilo de los enlaces de navegación */
@@ -89,27 +86,47 @@ body {
     display: inline-block; /* Mostrar como bloque */
     height: 60px; /* Altura de los enlaces */
     line-height: 60px; /* Altura de línea */
-    padding: 0 250px; /* Relleno interno */
+    padding: 0 25px; /* Relleno interno */
     text-align: center; /* Alinear al centro */
     text-decoration: none; /* Sin subrayado */
     text-transform: uppercase; /* Texto en mayúsculas */
     white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
 }
 
+        /* Estilo de los enlaces de navegación (link1) */
+        #navigation li a.link1 {
+            background: #02164d; /* Fondo del enlace */
+            color: #fff; /* Color del texto */
+            padding: 10px 15px; /* Espaciado interno */
+            text-decoration: none; /* Sin subrayado */
+            border-radius: 5px; /* Bordes redondeados */
+            display: inline-block; /* Para permitir padding y margenes */
+        }
+
+        /* Estilo de los enlaces de navegación (link2) */
+        #navigation li a.link2 {
+            background: #001f64; /* Fondo del enlace */
+            color: #fff; /* Color del texto */
+            padding: 10px 15px; /* Espaciado interno */
+            text-decoration: none; /* Sin subrayado */
+            border-radius: 5px; /* Bordes redondeados */
+            display: inline-block; /* Para permitir padding y margenes */
+        }
+
+        /* Estilo para el enlace de navegación actual */
+        #navigation li.current a {
+            background: #d4d1d1; /* Fondo del enlace activo */
+            color: #02164d; /* Color del texto activo */
+        }
+
 /* Estilo de los enlaces de navegación (link1) */
 #navigation li a.link1 {
     background: #02164d; /* Fondo del enlace */
-    color: #fff; /* Color del texto */
-    padding: 10px 15px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
 }
 
 /* Estilo de los enlaces de navegación (link2) */
 #navigation li a.link2 {
     background: #001f64; /* Fondo del enlace */
-    color: #fff; /* Color del texto */
-    padding: 10px 15px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
 }
 
 /* Estilo para el enlace de navegación actual */
@@ -118,11 +135,12 @@ body {
     color: #02164d; /* Color del texto activo */
 }
 
-/* Efectos hover */
+/* Estilo para el enlace activo al pasar el mouse */
 #navigation li.current a:hover {
     color: #fdfeff; /* Color del texto al hover */
 }
 
+/* Estilo para enlaces de navegación al pasar el mouse */
 #navigation li a:hover {
     color: #fff799; /* Color al hover */
 }
@@ -145,32 +163,56 @@ body div form {
 body div form input[type="text"],
 body div form input[type="email"],
 body div form input[type="tel"],
-body div form input[type="submit"] {
+body div form input[type="submit"],
+body div form select, /* Agregar select para dropdowns */
+body div form textarea { /* Agregar textarea para campos de texto */
     width: 100%; /* Ancho completo */
     max-width: 400px; /* Ancho máximo */
     padding: 10px; /* Relleno interno */
     margin: 10px 0; /* Margen superior e inferior */
     border-radius: 5px; /* Bordes redondeados */
     border: 1px solid #ccc; /* Borde gris claro */
-}
-
-/* Estilo de los botones del formulario */
-body div form input[type="submit"] {
-    background-color: #02164d; /* Color de fondo */
-    color: white; /* Color del texto */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    text-align: center;
+    box-sizing: border-box; /* Incluir borde y padding en el ancho total */
 }
 
 /* Estilo del encabezado del formulario */
 body div form h2 {
-    font-size: 24px; /* Tamaño del texto del encabezado */
+    font-size: 28px; /* Tamaño del texto del encabezado */
     margin-bottom: 20px; /* Espaciado inferior */
     white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+    text-align: center;
 }
 
-body div form h3 {
-    font-size: 30px; /* Tamaño del texto del encabezado */
-    margin-bottom: 20px; /* Espaciado inferior */
-    white-space: nowrap; /* Evitar que el texto se divida en varias líneas */
+/* Estilo general para el select */
+select {
+    width: 200px; /* Ajusta el ancho según sea necesario */
+    padding: 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de letra */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde gris claro */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333; /* Color del texto */
+}
+
+/* Estilo al pasar el mouse */
+select:hover {
+    border-color: #007BFF; /* Color del borde al pasar el mouse */
+}
+
+/* Estilo al enfocarse */
+select:focus {
+    outline: none; /* Eliminar el borde azul por defecto */
+    border-color: #007BFF; /* Color del borde al enfocar */
+}
+/* Estilo para campos de fecha y hora */
+body div form input[type="date"],
+body div form input[type="time"] {
+    width: 100%; /* Ancho completo */
+    max-width: 400px; /* Ancho máximo */
+    padding: 10px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de letra */
+    margin: 10px 0; /* Margen superior e inferior */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde gris claro */
+    box-sizing: border-box; /* Incluir borde y padding en el ancho total */
 }
