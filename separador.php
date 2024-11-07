@@ -36,7 +36,7 @@ if (!isset($_SESSION['usuario'])) {
         <a href="contacto.php">Seguimiento de cotizaciones(Productos Nuevos)</a>
     </div>
     <div class="option">
-        <a href="pendiente.php">Seguimiento de ventas</a>
+        <a href="reg_proveedor.php">Seguimiento de ventas</a>
     </div>
     <div class="option">
         <a href="logout.php">Cerrar Sesión</a>

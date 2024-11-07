@@ -1,59 +1,71 @@
 <?php
-// Conectar a la base de datos
-$conexion = new mysqli("localhost", "root", "", "gestor");
-
-// Verificar si la conexión es exitosa
-if ($conexion->connect_error) {
-    die("Error en la conexión: " . $conexion->connect_error);
+// Iniciar sesión solo si no está activa
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 }
 
-// Verificar si se enviaron los datos del formulario
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Inicializar las variables
-    $vendedor = isset($_POST['vendedor']) ? trim($_POST['vendedor']) : null; // Usar trim para eliminar espacios en blanco
-    $fecha_inicio = isset($_POST['fi']) ? trim($_POST['fi']) : null;
-    $hora_inicio = isset($_POST['hi']) ? trim($_POST['hi']) : null;
-    $fecha_entrega = isset($_POST['ft']) ? trim($_POST['ft']) : null;
-    $hora_entrega = isset($_POST['ht']) ? trim($_POST['ht']) : null;
-    $gestor = isset($_POST['ges']) ? trim($_POST['ges']) : null;
-    $producto = isset($_POST['pro']) ? trim($_POST['pro']) : null;
-    $cliente = isset($_POST['cli']) ? trim($_POST['cli']) : null;
-    $estatus = isset($_POST['estatus']) ? trim($_POST['estatus']) : null;
-    $anotaciones = isset($_POST['anot']) ? trim($_POST['anot']) : null;
+// Configuración de la base de datos
+$host = 'localhost';
+$usuario = 'root';
+$contrasena = '';
+$base_datos = 'gestor';
 
-    // Verificar si el campo vendedor está vacío
-    if (empty($vendedor)) {
-        echo "El campo vendedor está vacío.";
-    } else {
-        // Preparar la consulta para insertar los datos
-        $stmt = $conexion->prepare("INSERT INTO cotizaciones (vendedor, fecha_inicio, hora_inicio, fecha_entrega, hora_entrega, gestor, producto, cliente, estatus, anotaciones) 
-                                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        
-        // Comprobar si el statement se preparó correctamente
-        if ($stmt) {
-            // Enlazar los parámetros
-            $stmt->bind_param("ssssssssss", $vendedor, $fecha_inicio, $hora_inicio, $fecha_entrega, $hora_entrega, $gestor, $producto, $cliente, $estatus, $anotaciones);
+// Crear conexión
+$conn = new mysqli($host, $usuario, $contrasena, $base_datos);
 
-            // Ejecutar la consulta y verificar si se insertó correctamente
-            if ($stmt->execute()) {
-                // Mostrar una alerta antes de redirigir
-                echo "<script>
-                        alert('La cotización se ha guardado correctamente. Redirigiendo a la página de COTIZACIONES...');
-                        window.location.href = 'contacto.php';
-                      </script>";
-                exit();
-            } else {
-                echo "Error al insertar: " . $stmt->error; // Mostrar error específico de la inserción
-            }
+// Verificar conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
 
-            // Cerrar la declaración
-            $stmt->close();
-        } else {
-            echo "Error al preparar la consulta: " . $conexion->error; // Mostrar error en la preparación
-        }
+// Establecer el conjunto de caracteres a UTF-8
+$conn->set_charset("utf8");
+
+// Consultar la información de la tabla 'proveedores'
+$sql = "SELECT ID_Proveedor, nombre, constancia_fiscal, razon, regimen, rfc, domicilio_fiscal, domicilio_operativo, contacto, correo, lista, producto, ciudad FROM proveedores WHERE producto = 'Playo'";
+$result = $conn->query($sql);
+
+// Verificar si la consulta fue exitosa
+if ($result === false) {
+    die("Error en la consulta SQL: " . $conn->error);
+}
+
+// Almacenar resultados en un array
+$cotizaciones = [];
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $cotizaciones[] = $row; // Agrega cada fila al array
     }
 }
 
-// Cerrar la conexión
-$conexion->close();
+// Inserción de nuevo proveedor
+if (isset($_POST['nombre'], $_POST['constancia_fiscal'], $_POST['razon'], $_POST['regimen'], $_POST['rfc'], $_POST['domicilio_fiscal'], $_POST['domicilio_operativo'], $_POST['contacto'], $_POST['correo'], $_POST['lista'], $_POST['producto'], $_POST['ciudad'])) {
+    // Preparar la consulta de inserción
+    $stmt = $conn->prepare("INSERT INTO proveedores (nombre, constancia_fiscal, razon, regimen, rfc, domicilio_fiscal, domicilio_operativo, contacto, correo, lista, producto, ciudad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+    // Verificar si la consulta se preparó correctamente
+    if ($stmt) {
+        // Asignar valores a los parámetros
+        $stmt->bind_param("ssssssssssss", $_POST['nombre'], $_POST['constancia_fiscal'], $_POST['razon'], $_POST['regimen'], $_POST['rfc'], $_POST['domicilio_fiscal'], $_POST['domicilio_operativo'], $_POST['contacto'], $_POST['correo'], $_POST['lista'], $_POST['producto'], $_POST['ciudad']);
+
+        // Ejecutar la consulta y verificar si se insertó correctamente
+        if ($stmt->execute()) {
+            // Mostrar una alerta antes de redirigir
+            echo "<script>
+                    alert('El Proveedor se ha guardado correctamente. Redirigiendo a la página de proveedores...');
+                    window.location.href = 'proveedores.php';
+                  </script>";
+            exit();
+        } else {
+            echo "Error al insertar: " . $stmt->error; // Mostrar error específico de la inserción
+        }
+
+        // Cerrar la consulta preparada
+        $stmt->close();
+    } else {
+        echo "Error en la preparación de la consulta: " . $conn->error;
+    }
+}
+
+// No cerrar la conexión aquí para usarla en el archivo principal
 ?>

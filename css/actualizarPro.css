@@ -1,0 +1,107 @@
+/* Carga la fuente "ultraregular" */
+@font-face {
+    font-family: 'ultraregular';
+    src: url('../fonts/ultra-webfont.eot'); /* Archivo .eot para IE */
+    src: url('../fonts/ultra-webfont.eot?#iefix') format('embedded-opentype'), /* Soporte para IE */
+    url('../fonts/ultra-webfont.woff') format('woff'), /* Archivo .woff */
+    url('../fonts/ultra-webfont.ttf') format('truetype'), /* Archivo .ttf */
+    url('../fonts/ultra-webfont.svg#ultraregular') format('svg'); /* Archivo .svg */
+    font-weight: normal; /* Peso normal */
+    font-style: normal; /* Estilo normal */
+}
+
+/* Carga la fuente "arvobold" */
+@font-face {
+    font-family: 'arvobold';
+    src: url('../fonts/arvo-bold-webfont.eot');
+    src: url('../fonts/arvo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/arvo-bold-webfont.woff') format('woff'),
+    url('../fonts/arvo-bold-webfont.ttf') format('truetype'),
+    url('../fonts/arvo-bold-webfont.svg#arvobold') format('svg');
+    font-weight: normal; /* Peso normal */
+    font-style: normal; /* Estilo normal */
+}
+
+/* Carga la fuente "arvoregular" */
+@font-face {
+    font-family: 'arvoregular';
+    src: url('../fonts/arvo-regular-webfont.eot');
+    src: url('../fonts/arvo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/arvo-regular-webfont.woff') format('woff'),
+    url('../fonts/arvo-regular-webfont.ttf') format('truetype'),
+    url('../fonts/arvo-regular-webfont.svg#arvoregular') format('svg');
+    font-weight: normal; /* Peso normal */
+    font-style: normal; /* Estilo normal */
+}
+
+/* Estilo general del cuerpo */
+body {
+    background: url(../images/bg-body.png) repeat; /* Fondo del cuerpo */
+    color: #000000; /* Color del texto */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente general */
+    font-size: 14px; /* Tamaño de fuente */
+    margin: 0; /* Elimina márgenes */
+    min-width: 960px; /* Ancho mínimo */
+    padding: 0; /* Elimina relleno */
+}
+
+/* Estilo del formulario de nuevos prospectos */
+body div form {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de transparencia */
+    width: 500px; /* Ancho fijo del contenedor */
+    margin: 20px auto; /* Centrar el formulario */
+    padding: 20px; /* Espaciado interno del contenedor */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Sombra alrededor del contenedor */
+    display: flex; /* Usar flexbox para alinear elementos */
+    flex-direction: column; /* Disposición en columna */
+    align-items: center; /* Centrar horizontalmente */
+}
+
+/* Estilo de los encabezados del formulario */
+body div form h2 {
+    font-size: 24px; /* Tamaño del texto del encabezado */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+/* Estilo de los campos de entrada */
+body div form input[type="text"],
+body div form input[type="email"],
+body div form input[type="tel"],
+body div form input[type="date"],
+body div form input[type="time"] {
+    width: 100%; /* Ancho completo */
+    max-width: 400px; /* Ancho máximo */
+    padding: 10px; /* Relleno interno */
+    margin: 10px 0; /* Margen superior e inferior */
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde gris claro */
+    font-family: 'arvoregular'; /* Fuente para los inputs */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+/* Estilo de los botones del formulario */
+body div form input[type="submit"] {
+    background-color: #02164d; /* Color de fondo */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    padding: 10px 20px; /* Relleno interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-family: 'arvobold'; /* Fuente para el botón */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-top: 20px; /* Margen superior */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Estilo del botón al pasar el mouse */
+body div form input[type="submit"]:hover {
+    background-color: #d4d1d1; /* Cambia a un color más claro al hover */
+}
+
+/* Estilo para etiquetas de los campos (si tienes etiquetas en el formulario) */
+body div form label {
+    font-family: 'arvobold'; /* Fuente para etiquetas */
+    margin-bottom: 5px; /* Margen inferior */
+    display: block; /* Mostrar como bloque para apilar verticalmente */
+}
